@@ -5,10 +5,10 @@ const path = require('path');
 const app = express();
 
 // Serve the static files from the dist directory
-app.use(express.static(__dirname + '/dist/angular-app-trillo'));
+app.use(express.static(__dirname + '/dist/styling-with-flexbox'));
 
 app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/dist/angular-app-trillo'))
+    res.sendFile(path.join(__dirname + '/dist/styling-with-flexbox'))
 });
 
 // Start the app by listening on the default Heroku port
