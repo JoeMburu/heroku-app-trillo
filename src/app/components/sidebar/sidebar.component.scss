@@ -1,0 +1,77 @@
+////////////////////////////////////////
+// SIDE NAVIGATION
+
+.side-nav {
+    list-style: none;
+    margin-top: 3.5rem;
+
+    
+   
+    &__item {
+        height: 5.5rem;
+        // border: 1px solid #fff;  
+        font-size: 1.4rem; 
+        position: relative; 
+        
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+    }
+
+    &__item:active::before {
+        background-color: var(--color-primary-light);
+    }
+
+    &__item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;        
+        background-color: var(--color-primary);
+        transform: scaleY(0);
+        transition: transform .2s, 
+                    width .4s cubic-bezier(1,0,0,1) .2s,
+                    background-color .1s;
+    }
+
+
+
+    &__item:hover::before,
+    &__item--active::before {
+        transform: scaleY(1);
+        width: 100%;        
+    }
+
+    &__link,
+    &__link:visited {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+        color: var(--color-grey-light-1);
+        text-transform: uppercase;
+        text-decoration: none;
+        padding-left: 2rem;
+        z-index: 10;
+        position: relative;
+    }
+
+    &__icon {
+        width: 1.7rem;
+        height: 1.7rem;
+        fill: currentColor;
+        margin-right: 2rem;
+    }
+}
+
+////////////////////////////////////////
+// LEGAL TEXT
+
+.legal {
+    font-size: 1.2rem;
+    color: var(--color-grey-light-4);
+    text-align: center;
+    padding: 2.5rem;
+}
